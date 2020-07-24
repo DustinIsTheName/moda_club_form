@@ -1,6 +1,6 @@
 <div>
   <% @data.each do |key, value| %>
-    <% unless key == "controller" or key == "action" %>
+    <% unless key == "controller" or key == "action" or key == "credit_card_number" or key == "expiration_date" %>
       <div><%= key %>: <%= value %></div>
     <% end %>
   <% end %>
