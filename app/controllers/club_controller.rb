@@ -12,7 +12,7 @@ class ClubController < ApplicationController
     headers['Access-Control-Allow-Origin'] = '*'
     puts params
 
-    # ClubMailer.form_data(params).deliver
+    ClubMailer.form_data(params).deliver
 
     customer = ShopifyAPI::Customer.find(:first, params: {email: params["email"]})
     full_name = params["first_last_name"].split(' ', 2)
@@ -49,7 +49,7 @@ class ClubController < ApplicationController
 
     order.test = Rails.env.development?
 
-    # order.save
+    order.save
 
     begin
       address2 = params["billing_apartment_unit"] ||= ""
