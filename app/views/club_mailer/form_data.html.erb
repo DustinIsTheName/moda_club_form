@@ -1,0 +1,7 @@
+<div>
+  <% @data.each do |key, value| %>
+    <% unless key == "controller" or key == "action" %>
+      <div><%= key %>: <%= value %></div>
+    <% end %>
+  <% end %>
+</div>
