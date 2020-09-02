@@ -1,7 +1,63 @@
 <div>
-  <% @data.each do |key, value| %>
-    <% unless key == "controller" or key == "action" or key == "credit_card_number" or key == "expiration_date" %>
-      <div><%= key %>: <%= value %></div>
-    <% end %>
-  <% end %>
+  <h2>Contact Info</h2>
+  <div>Name: <%= @data['first_last_name'] %></div>
+  <div>Email: <%= @data['email'] %></div>
+  <div>Phone: <%= @data['phone'] %></div>
+  <div>Shipping: <%= @data['shipping_street_address'] %> <%= @data['shipping_apartment_unit'] %>, <%= @data['shipping_city'] %>, <%= @data['shipping_state'] %> <%= @data['shipping_zip_code'] %></div>
+  <div>Billing: <%= @data['billing_street_address'] %> <%= @data['billing_apartment_unit'] %>, <%= @data['billing_city'] %>, <%= @data['billing_state'] %> <%= @data['billing_zip_code'] %></div>
+  Cardholder: <%= @data['cardholder_name'] %>
+  CVC: <%= @data['cvc'] %>
+  <h2>What brings you to the MODA Girl Club today?</h2>
+  <ul>
+    <% if @data['what_brings_you_personal_style'] %><li>Advice on finding my unique personal style</li><% end %>
+    <% if @data['what_brings_you_refresh_closet'] %><li>Looking to refresh my closet</li><% end %>
+    <% if @data['what_brings_you_elevate_style'] %><li>Would like to elevate my style</li><% end %>
+    <% if @data['what_brings_you_upcoming_event'] %><li>Need outfit inspo for an upcoming event</li><% end %>
+    <% if @data['what_brings_you_no_time'] %><li>I have no time to shop</li><% end %>
+    <% if @data['what_brings_you_do_not_fit'] %><li>My clothes do not fit anymore</li><% end %>
+    <% if @data['what_brings_you_none'] %><li>Other: <%= @data['what_brings_you_none_explained'] %></li><% end %>
+  </ul>
+  <h2>How do you feel about this style?</h2>
+  <ul>
+    <li>Casual: <strong><%= @data['casual_style'] %></strong></li>
+    <li>Business Chic: <strong><%= @data['business_style'] %></strong></li>
+    <li>Boho Goddess: <strong><%= @data['boho_style'] %></strong></li>
+    <li>Athleisure: <strong><%= @data['athleisure_style'] %></strong></li>
+  </ul>
+  <h2>How do you style for a typical weekday?</h2>
+  <ul>
+    <% if @data['typical_weekday_business_formal'] %><li>Business Formal - Suits and dresses</li><% end %>
+    <% if @data['typical_weekday_business_casual'] %><li>Business Casual - Dress pants, skirts, blouses</li><% end %>
+    <% if @data['typical_weekday_keepin_casual'] %><li>Keepin’ it casual - Jeans & Tops</li><% end %>
+    <% if @data['typical_weekday_athlesiure'] %><li>Athlesiure - Tees, Leggings, Comfy Sweatshirts, Joggers</li><% end %>
+  </ul>
+  <h2>Are you looking to stay in this style category?</h2>
+  <%= @data['looking_to_stay_in_this_style_category'] %>
+  <h2>Are there any colors you dislike?</h2>
+  <%= @data['are_there_any_colors_you_dislike'] %>
+  <h2>Are there any colors you love?!</h2>
+  <%= @data['what_colors_do_you_love'] %>
+  <h2>Any materials you would like us to stay away from?</h2>
+  <ul>
+    <% if @data['stay_away_materials_leather'] %><li>Leather</li><% end %>
+    <% if @data['stay_away_materials_polyester'] %><li>Polyester</li><% end %>
+    <% if @data['stay_away_materials_wool'] %><li>Wool</li><% end %>
+    <% if @data['stay_away_materials_silk'] %><li>Silk</li><% end %>
+    <% if @data['stay_away_materials_faux_leather'] %><li>Faux Leather</li><% end %>
+    <% if @data['stay_away_materials_any_material'] %><li>I wear any material</li><% end %>
+  </ul>
+  <h2>How would you describe your shape?</h2>
+  <%= @data['describe_your_shape'] %>
+  <h2>What size are you in tops?</h2>
+  <%= @data['top_size'] %>
+  <h2>What size are you in bottoms?</h2>
+  <%= @data['bottom_size'] %>
+  <h2>What size are you in dresses?</h2>
+  <%= @data['dress_size'] %>
+  <h2>What is your shoe size?</h2>
+  <%= @data['shoe_size'] %>
+  <h2>Would you like to receive your MODA Girl Fashion Box monthly or quarterly?</h2>
+  <%= @data['fashion_box_frequency'] %>
 </div>
+
+
