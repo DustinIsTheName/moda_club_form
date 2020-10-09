@@ -47,6 +47,17 @@ class ClubController < ApplicationController
       quantity: 1
     ]
 
+    order.shipping_address = {
+      address1: params["shipping_street_address"],
+      city: params["shipping_city"],
+      province: params["shipping_state"],
+      phone: params["phone"],
+      zip: params["shipping_zip_code"],
+      last_name: full_name.last,
+      first_name: full_name.first,
+      country: "united states"
+    }
+
     order.test = Rails.env.development?
 
     order.save
